@@ -9,6 +9,10 @@ import (
 type LogrusPlugin struct {
 }
 
+func (p *LogrusPlugin) Order() int {
+	return 0
+}
+
 func (p *LogrusPlugin) Load() error {
 	// TODO 日志配置
 	return log.InitLogger("logrus")

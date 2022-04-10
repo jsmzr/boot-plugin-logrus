@@ -4,8 +4,8 @@ github.com/jsmzr/bootstrap-log v0.0.2 h1:1HGI6FKMS6YUNLq1jJL3ZfdeFeEQlRD2AJpCXCv
 github.com/jsmzr/bootstrap-log v0.0.2/go.mod h1:3t0kzzJptJuLTx5BFAwfuXC61MVL+vyxgfzkjSppx8s=
 github.com/jsmzr/bootstrap-log-logrus v0.0.3 h1:d1bMhNb6OhKLFww6FQD5FwqqLtCumTjcBX5dWpmv1r0=
 github.com/jsmzr/bootstrap-log-logrus v0.0.3/go.mod h1:Po4ae8VhXjTxNHF9p81Qe8cOXXQAflT42DQUT7QrqhY=
-github.com/jsmzr/bootstrap-plugin v0.0.1 h1:tB/ew35zx0XJrvZghXqBrew0WFyfVwfmQDJRDGNLovE=
-github.com/jsmzr/bootstrap-plugin v0.0.1/go.mod h1:nH+IQoW9iW88IvGOKgiVFch2Li9LAQF3vHiPYCJEJ2k=
+github.com/jsmzr/bootstrap-plugin v0.0.2 h1:KsqC0llFuGW5CXulsOmFZEe9FneZLNgoiCEImlQLUwk=
+github.com/jsmzr/bootstrap-plugin v0.0.2/go.mod h1:nH+IQoW9iW88IvGOKgiVFch2Li9LAQF3vHiPYCJEJ2k=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=

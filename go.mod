@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/jsmzr/bootstrap-log v0.0.2
 	github.com/jsmzr/bootstrap-log-logrus v0.0.3
-	github.com/jsmzr/bootstrap-plugin v0.0.1
+	github.com/jsmzr/bootstrap-plugin v0.0.2
 )
 
 require (
