@@ -1,7 +1,6 @@
-package log
+package plugin
 
 import (
-	_ "github.com/jsmzr/bootstrap-log-logrus/logrus"
 	"github.com/jsmzr/bootstrap-log/log"
 	"github.com/jsmzr/bootstrap-plugin/plugin"
 )
@@ -15,7 +14,9 @@ func (p *LogrusPlugin) Order() int {
 
 func (p *LogrusPlugin) Load() error {
 	// TODO 日志配置
-	return log.InitLogger("logrus")
+	logType := "logrus"
+	log.Register(logType, &LogrusConfig{})
+	return log.InitLogger(logType)
 }
 
 func init() {
