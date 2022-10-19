@@ -3,9 +3,9 @@ module github.com/jsmzr/bootstrap-plugin-logrus
 go 1.17
 
 require (
-	github.com/jsmzr/bootstrap-config v0.0.3
-	github.com/jsmzr/bootstrap-log v0.0.2
-	github.com/jsmzr/bootstrap-plugin v0.0.2
+	github.com/jsmzr/bootstrap-config v0.1.1
+	github.com/jsmzr/bootstrap-log v0.1.0
+	github.com/jsmzr/bootstrap-plugin v0.1.0
 	github.com/sirupsen/logrus v1.8.1
 )
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jsmzr/bootstrap-config/config"
-	"github.com/jsmzr/bootstrap-log/log"
+	config "github.com/jsmzr/bootstrap-config"
+	log "github.com/jsmzr/bootstrap-log"
 	"github.com/sirupsen/logrus"
 )
 
@@ -16,12 +16,11 @@ type LogrusContainer struct {
 }
 
 func (c *LogrusConfig) Load() (log.Logger, error) {
-	// TODO 一些配置支持
 	level, ok := config.Get("logging.level")
 	logger := logrus.New()
 	if ok {
 		levelStr := strings.ToUpper(level.Str)
-		fmt.Printf("设置日志级别为 [%v]\n", levelStr)
+		fmt.Printf("[Bootstrap-Plugin-Logrus]  Set logger level [%v]\n", levelStr)
 		switch levelStr {
 		case "DEBUG":
 			logger.SetLevel(logrus.DebugLevel)
@@ -38,7 +37,8 @@ func (c *LogrusConfig) Load() (log.Logger, error) {
 	var format logrus.TextFormatter
 	err := config.Resolve("logging.format", &format)
 	if err != nil {
-		logger.Errorf("获取不到 logrus.format 配置使用默认配置")
+		logger.Printf("[Bootstrap-Plugin-Logrus]  Get logger format error: %s \n", err.Error())
+		logger.Println("[Bootstrap-Plugin-Logrus]  Use default format")
 	} else {
 		logger.SetFormatter(&format)
 	}
