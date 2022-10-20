@@ -2,10 +2,10 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/jsmzr/bootstrap-config v0.1.1 h1:F1RLG/O4tNXY+pOAy9IjYvCMQblsXiVJaariBeXH0vE=
 github.com/jsmzr/bootstrap-config v0.1.1/go.mod h1:RPum56DdfkCbMipzuB6o0b87HppC4EUFPULxuEbOAvE=
-github.com/jsmzr/bootstrap-log v0.1.0 h1:nRLxCGy0x3qRWbdAfMCZ2XJtOWcqhifCxgo/pvpzRF8=
-github.com/jsmzr/bootstrap-log v0.1.0/go.mod h1:3t0kzzJptJuLTx5BFAwfuXC61MVL+vyxgfzkjSppx8s=
-github.com/jsmzr/bootstrap-plugin v0.1.0 h1:Ulciin3ZhRwFrJ1gIrOhx//pn1DKjUh3qGm+5I2y2/k=
-github.com/jsmzr/bootstrap-plugin v0.1.0/go.mod h1:nH+IQoW9iW88IvGOKgiVFch2Li9LAQF3vHiPYCJEJ2k=
+github.com/jsmzr/bootstrap-log v0.1.1 h1:GGVHPz7XdDsKnxRqtSKcRkkmqLxNN79WpPRInBF/m4g=
+github.com/jsmzr/bootstrap-log v0.1.1/go.mod h1:3t0kzzJptJuLTx5BFAwfuXC61MVL+vyxgfzkjSppx8s=
+github.com/jsmzr/bootstrap-plugin v0.1.1 h1:1TPeGRT5fKDe6jPChTnD22RAY1uGZltOO8I1PDJxM0Y=
+github.com/jsmzr/bootstrap-plugin v0.1.1/go.mod h1:nH+IQoW9iW88IvGOKgiVFch2Li9LAQF3vHiPYCJEJ2k=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=
