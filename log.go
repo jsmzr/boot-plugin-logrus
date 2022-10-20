@@ -1,7 +1,6 @@
 package plugin
 
 import (
-	"fmt"
 	"strings"
 
 	config "github.com/jsmzr/bootstrap-config"
@@ -16,11 +15,10 @@ type LogrusContainer struct {
 }
 
 func (c *LogrusConfig) Load() (log.Logger, error) {
-	level, ok := config.Get("logging.level")
+	level, ok := config.Get("bootstrap.logging.level")
 	logger := logrus.New()
 	if ok {
 		levelStr := strings.ToUpper(level.Str)
-		fmt.Printf("[Bootstrap-Plugin-Logrus]  Set logger level [%v]\n", levelStr)
 		switch levelStr {
 		case "DEBUG":
 			logger.SetLevel(logrus.DebugLevel)
@@ -35,11 +33,7 @@ func (c *LogrusConfig) Load() (log.Logger, error) {
 		logger.SetLevel(logrus.InfoLevel)
 	}
 	var format logrus.TextFormatter
-	err := config.Resolve("logging.format", &format)
-	if err != nil {
-		logger.Printf("[Bootstrap-Plugin-Logrus]  Get logger format error: %s \n", err.Error())
-		logger.Println("[Bootstrap-Plugin-Logrus]  Use default format")
-	} else {
+	if config.Resolve("bootstrap.logging.format", &format) == nil {
 		logger.SetFormatter(&format)
 	}
 	return &LogrusContainer{
