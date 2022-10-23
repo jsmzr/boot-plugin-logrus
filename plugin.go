@@ -18,6 +18,10 @@ func (p *LogrusPlugin) Load() error {
 	return log.InitLogger(logType)
 }
 
+func (p *LogrusPlugin) Enabled() bool {
+	return true
+}
+
 func init() {
 	plugin.Register("log", &LogrusPlugin{})
 }
