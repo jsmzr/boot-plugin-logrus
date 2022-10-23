@@ -1,11 +1,11 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/jsmzr/bootstrap-config v0.1.1 h1:F1RLG/O4tNXY+pOAy9IjYvCMQblsXiVJaariBeXH0vE=
-github.com/jsmzr/bootstrap-config v0.1.1/go.mod h1:RPum56DdfkCbMipzuB6o0b87HppC4EUFPULxuEbOAvE=
-github.com/jsmzr/bootstrap-log v0.1.1 h1:GGVHPz7XdDsKnxRqtSKcRkkmqLxNN79WpPRInBF/m4g=
-github.com/jsmzr/bootstrap-log v0.1.1/go.mod h1:3t0kzzJptJuLTx5BFAwfuXC61MVL+vyxgfzkjSppx8s=
-github.com/jsmzr/bootstrap-plugin v0.1.1 h1:1TPeGRT5fKDe6jPChTnD22RAY1uGZltOO8I1PDJxM0Y=
-github.com/jsmzr/bootstrap-plugin v0.1.1/go.mod h1:nH+IQoW9iW88IvGOKgiVFch2Li9LAQF3vHiPYCJEJ2k=
+github.com/jsmzr/boot-config v0.1.2 h1:RbFCFSathlCdv6YPdW1CAjvo92ph5JglW1eN1UaCHWk=
+github.com/jsmzr/boot-config v0.1.2/go.mod h1:hQ1GpVBppyvlXxEO+FbG+iD8ozLvhayLFfk0d0y2W3Q=
+github.com/jsmzr/boot-log v0.1.0 h1:b3PZpCybc062fkpKNQvfO/wUrpq8dZmapv1hDHI5yuU=
+github.com/jsmzr/boot-log v0.1.0/go.mod h1:2nFB8Xc+QerX8jf0yi57r9YnE9pvFWnDxU/3KlkrvkI=
+github.com/jsmzr/boot-plugin v0.1.0 h1:ON12rFAumW3fw1z4AHrOvdbb1Uvi1SrGU3oDP6BCxLU=
+github.com/jsmzr/boot-plugin v0.1.0/go.mod h1:Sc2Oxxd6gB6iyeKWyYAB1TzL7JD22ohU/diAL0li5SQ=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=

@@ -1,8 +1,8 @@
 package plugin
 
 import (
-	log "github.com/jsmzr/bootstrap-log"
-	plugin "github.com/jsmzr/bootstrap-plugin"
+	log "github.com/jsmzr/boot-log"
+	plugin "github.com/jsmzr/boot-plugin"
 )
 
 type LogrusPlugin struct {

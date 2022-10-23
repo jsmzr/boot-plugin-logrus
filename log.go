@@ -3,8 +3,8 @@ package plugin
 import (
 	"strings"
 
-	config "github.com/jsmzr/bootstrap-config"
-	log "github.com/jsmzr/bootstrap-log"
+	config "github.com/jsmzr/boot-config"
+	log "github.com/jsmzr/boot-log"
 	"github.com/sirupsen/logrus"
 )
 
@@ -15,7 +15,7 @@ type LogrusContainer struct {
 }
 
 func (c *LogrusConfig) Load() (log.Logger, error) {
-	level, ok := config.Get("bootstrap.logging.level")
+	level, ok := config.Get("boot.logging.level")
 	logger := logrus.New()
 	if ok {
 		levelStr := strings.ToUpper(level.Str)
@@ -33,7 +33,7 @@ func (c *LogrusConfig) Load() (log.Logger, error) {
 		logger.SetLevel(logrus.InfoLevel)
 	}
 	var format logrus.TextFormatter
-	if config.Resolve("bootstrap.logging.format", &format) == nil {
+	if config.Resolve("boot.logging.format", &format) == nil {
 		logger.SetFormatter(&format)
 	}
 	return &LogrusContainer{
