@@ -1,11 +1,12 @@
 package plugin
 
 import (
+	"fmt"
 	"strings"
 
-	config "github.com/jsmzr/boot-config"
 	log "github.com/jsmzr/boot-log"
 	"github.com/sirupsen/logrus"
+	"github.com/spf13/viper"
 )
 
 type LogrusConfig struct{}
@@ -15,26 +16,23 @@ type LogrusContainer struct {
 }
 
 func (c *LogrusConfig) Load() (log.Logger, error) {
-	level, ok := config.Get("boot.logging.level")
+	level := viper.GetString(configPrefix + ".level")
 	logger := logrus.New()
-	if ok {
-		levelStr := strings.ToUpper(level.Str)
-		switch levelStr {
-		case "DEBUG":
-			logger.SetLevel(logrus.DebugLevel)
-		case "INFO":
-			logger.SetLevel(logrus.InfoLevel)
-		case "WARN":
-			logger.SetLevel(logrus.WarnLevel)
-		case "ERROR":
-			logger.SetLevel(logrus.ErrorLevel)
-		}
-	} else {
+	switch strings.ToUpper(level) {
+	case "DEBUG":
+		logger.SetLevel(logrus.DebugLevel)
+	case "WARN":
+		logger.SetLevel(logrus.WarnLevel)
+	case "ERROR":
+		logger.SetLevel(logrus.ErrorLevel)
+	default:
 		logger.SetLevel(logrus.InfoLevel)
 	}
 	var format logrus.TextFormatter
-	if config.Resolve("boot.logging.format", &format) == nil {
+	if err := viper.UnmarshalKey(configPrefix+".format", &format); err == nil {
 		logger.SetFormatter(&format)
+	} else {
+		fmt.Printf("unmarshalKey [boot.loggin.format] failed, %v \n", err)
 	}
 	return &LogrusContainer{
 		logger: logger,

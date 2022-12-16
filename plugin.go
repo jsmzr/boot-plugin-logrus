@@ -3,13 +3,18 @@ package plugin
 import (
 	log "github.com/jsmzr/boot-log"
 	plugin "github.com/jsmzr/boot-plugin"
+	"github.com/spf13/viper"
 )
 
 type LogrusPlugin struct {
 }
 
+const configPrefix = "boot.logging"
+
+var defaultConfig map[string]interface{} = map[string]interface{}{"enabled": true, "order": -5, "level": "INFO"}
+
 func (p *LogrusPlugin) Order() int {
-	return 0
+	return viper.GetInt(configPrefix + ".order")
 }
 
 func (p *LogrusPlugin) Load() error {
@@ -19,9 +24,12 @@ func (p *LogrusPlugin) Load() error {
 }
 
 func (p *LogrusPlugin) Enabled() bool {
-	return true
+	return viper.GetBool(configPrefix + ".enabled")
 }
 
 func init() {
+	for key := range defaultConfig {
+		viper.SetDefault(configPrefix+"."+key, defaultConfig[key])
+	}
 	plugin.Register("log", &LogrusPlugin{})
 }
