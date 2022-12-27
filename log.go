@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	log "github.com/jsmzr/boot-log"
+	"github.com/jsmzr/boot-plugin-logrus/config"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
@@ -16,7 +17,7 @@ type LogrusContainer struct {
 }
 
 func (c *LogrusConfig) Load() (log.Logger, error) {
-	level := viper.GetString(configPrefix + ".level")
+	level := viper.GetString(configPrefix + "level")
 	logger := logrus.New()
 	switch strings.ToUpper(level) {
 	case "DEBUG":
@@ -29,10 +30,20 @@ func (c *LogrusConfig) Load() (log.Logger, error) {
 		logger.SetLevel(logrus.InfoLevel)
 	}
 	var format logrus.TextFormatter
-	if err := viper.UnmarshalKey(configPrefix+".format", &format); err == nil {
+	if err := viper.UnmarshalKey(configPrefix+"format", &format); err == nil {
 		logger.SetFormatter(&format)
 	} else {
 		fmt.Printf("unmarshalKey [boot.loggin.format] failed, %v \n", err)
+	}
+	logger.SetReportCaller(viper.GetBool(configPrefix + "reportCaller"))
+	if config.Out != nil {
+		logger.SetOutput(config.Out)
+	}
+	if config.Hooks != nil {
+		logger.Hooks = config.Hooks
+	}
+	if config.ExitFunc != nil {
+		logger.ExitFunc = config.ExitFunc
 	}
 	return &LogrusContainer{
 		logger: logger,

@@ -9,12 +9,17 @@ import (
 type LogrusPlugin struct {
 }
 
-const configPrefix = "boot.logging"
+const configPrefix = "boot.logging."
 
-var defaultConfig map[string]interface{} = map[string]interface{}{"enabled": true, "order": -5, "level": "INFO"}
+var defaultConfig map[string]interface{} = map[string]interface{}{
+	"enabled":      true,
+	"order":        -5,
+	"level":        "INFO",
+	"reportCaller": false,
+}
 
 func (p *LogrusPlugin) Order() int {
-	return viper.GetInt(configPrefix + ".order")
+	return viper.GetInt(configPrefix + "order")
 }
 
 func (p *LogrusPlugin) Load() error {
@@ -24,12 +29,10 @@ func (p *LogrusPlugin) Load() error {
 }
 
 func (p *LogrusPlugin) Enabled() bool {
-	return viper.GetBool(configPrefix + ".enabled")
+	return viper.GetBool(configPrefix + "enabled")
 }
 
 func init() {
-	for key := range defaultConfig {
-		viper.SetDefault(configPrefix+"."+key, defaultConfig[key])
-	}
+	plugin.InitDefaultConfig(configPrefix, defaultConfig)
 	plugin.Register("log", &LogrusPlugin{})
 }

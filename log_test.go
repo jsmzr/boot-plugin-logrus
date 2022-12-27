@@ -1,8 +1,11 @@
 package plugin
 
 import (
+	"os"
 	"testing"
 
+	"github.com/jsmzr/boot-plugin-logrus/config"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
 
@@ -52,4 +55,24 @@ func TestLog(t *testing.T) {
 	log.Info("info")
 	log.Warn("war")
 	log.Error("error")
+}
+
+func TestConfigLoad(t *testing.T) {
+	logrusConfig := LogrusConfig{}
+	config.Out = os.Stderr
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
+	config.Out = nil
+
+	config.Hooks = make(logrus.LevelHooks)
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
+	config.Hooks = nil
+	config.ExitFunc = os.Exit
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
+
 }
