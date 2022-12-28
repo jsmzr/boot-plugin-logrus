@@ -12,19 +12,27 @@ import (
 func TestLoadLevelLog(t *testing.T) {
 	logrusConfig := LogrusConfig{}
 	// default level
-	logrusConfig.Load()
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
 
 	// debug level
 	viper.Set("boot.logging.level", "DEBUG")
-	logrusConfig.Load()
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
 
 	// warn level
 	viper.Set("boot.logging.level", "WARN")
-	logrusConfig.Load()
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
 
 	// error level
 	viper.Set("boot.logging.level", "ERROR")
-	logrusConfig.Load()
+	if _, err := logrusConfig.Load(); err != nil {
+		t.Fatal(err)
+	}
 }
 
 func TestLoadFormatLog(t *testing.T) {
